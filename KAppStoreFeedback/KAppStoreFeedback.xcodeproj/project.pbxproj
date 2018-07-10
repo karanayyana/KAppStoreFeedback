@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C7A64020F51B72006B15AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C7A63F20F51B72006B15AC /* Assets.xcassets */; };
 		42D1802620F48C9D00E0C4E6 /* KAppStoreFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42D1802F20F48D6600E0C4E6 /* KASFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D1802C20F48D6600E0C4E6 /* KASFConstants.swift */; };
 		42D1803020F48D6600E0C4E6 /* KASFRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D1802D20F48D6600E0C4E6 /* KASFRateViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42C7A63F20F51B72006B15AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D1802120F48C9D00E0C4E6 /* KAppStoreFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KAppStoreFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAppStoreFeedback.h; sourceTree = "<group>"; };
 		42D1802520F48C9D00E0C4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		42D1802320F48C9D00E0C4E6 /* KAppStoreFeedback */ = {
 			isa = PBXGroup;
 			children = (
+				42C7A63F20F51B72006B15AC /* Assets.xcassets */,
 				42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */,
 				42D1802C20F48D6600E0C4E6 /* KASFConstants.swift */,
 				42D1802D20F48D6600E0C4E6 /* KASFRateViewController.swift */,
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C7A64020F51B72006B15AC /* Assets.xcassets in Resources */,
 				42D1803320F48D9400E0C4E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
