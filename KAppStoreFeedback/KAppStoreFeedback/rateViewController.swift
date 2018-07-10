@@ -1,14 +1,15 @@
 //
-//  ViewController.swift
-//  KAppStroreFeedback
+//  rateViewController.swift
+//  KAppStoreFeedback
 //
-//  Created by Prajwal Karanayyana Vasantha on 7/9/18.
+//  Created by Prajwal Karanayyana Vasantha on 7/10/18.
 //  Copyright © 2018 karanayyana. All rights reserved.
 //
 
 import UIKit
 
-class KASFRateViewController: UIViewController, KASFRateViewModelDelegate {
+class rateViewController: UIViewController , rateViewModelDelegate{
+
     
     @IBOutlet weak var emoticonView: UIView!
     @IBOutlet weak var ratingView: UIView!
@@ -39,8 +40,8 @@ class KASFRateViewController: UIViewController, KASFRateViewModelDelegate {
     
     
     
-    private lazy var viewModel : KASFRateViewModel = {
-        let viewModel = KASFRateViewModel(delegate: self)
+    private lazy var viewModel : rateViewModel = {
+        let viewModel = rateViewModel(delegate: self)
         return viewModel
     }()
     
@@ -50,7 +51,7 @@ class KASFRateViewController: UIViewController, KASFRateViewModelDelegate {
     }
     
     //MARK:- Public methods
-
+    
     public func setFeedBackType(_ kASFFeedbackType : KASFFeedbackType) {
         viewModel.setFeedBackType(kASFFeedbackType)
     }
@@ -128,7 +129,7 @@ class KASFRateViewController: UIViewController, KASFRateViewModelDelegate {
         viewModel.userSelectedRating(rating: sender.tag)
     }
     
-
+    
     @IBAction func ratingStarsClicked(_ sender : UIButton) {
         switch sender.tag {
         case 1:
@@ -172,4 +173,3 @@ class KASFRateViewController: UIViewController, KASFRateViewModelDelegate {
         viewModel.userSelectedRating(rating: sender.tag)
     }
 }
-

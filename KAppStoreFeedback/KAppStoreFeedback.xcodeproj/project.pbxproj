@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42514CD820F57A7000C60894 /* rateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD720F57A7000C60894 /* rateViewController.swift */; };
+		42514CDA20F57A9E00C60894 /* rateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD920F57A9E00C60894 /* rateViewModel.swift */; };
+		42514CDC20F57AED00C60894 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CDB20F57AED00C60894 /* constants.swift */; };
 		42C7A64020F51B72006B15AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42C7A63F20F51B72006B15AC /* Assets.xcassets */; };
 		42D1802620F48C9D00E0C4E6 /* KAppStoreFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42D1802F20F48D6600E0C4E6 /* KASFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D1802C20F48D6600E0C4E6 /* KASFConstants.swift */; };
-		42D1803020F48D6600E0C4E6 /* KASFRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D1802D20F48D6600E0C4E6 /* KASFRateViewController.swift */; };
-		42D1803120F48D6600E0C4E6 /* KASFRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D1802E20F48D6600E0C4E6 /* KASFRateViewModel.swift */; };
 		42D1803320F48D9400E0C4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D1803220F48D9400E0C4E6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42514CD720F57A7000C60894 /* rateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateViewController.swift; sourceTree = "<group>"; };
+		42514CD920F57A9E00C60894 /* rateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateViewModel.swift; sourceTree = "<group>"; };
+		42514CDB20F57AED00C60894 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		42C7A63F20F51B72006B15AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42D1802120F48C9D00E0C4E6 /* KAppStoreFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KAppStoreFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAppStoreFeedback.h; sourceTree = "<group>"; };
 		42D1802520F48C9D00E0C4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42D1802C20F48D6600E0C4E6 /* KASFConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KASFConstants.swift; sourceTree = "<group>"; };
-		42D1802D20F48D6600E0C4E6 /* KASFRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KASFRateViewController.swift; sourceTree = "<group>"; };
-		42D1802E20F48D6600E0C4E6 /* KASFRateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KASFRateViewModel.swift; sourceTree = "<group>"; };
 		42D1803220F48D9400E0C4E6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,11 +58,11 @@
 			children = (
 				42C7A63F20F51B72006B15AC /* Assets.xcassets */,
 				42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */,
-				42D1802C20F48D6600E0C4E6 /* KASFConstants.swift */,
-				42D1802D20F48D6600E0C4E6 /* KASFRateViewController.swift */,
-				42D1802E20F48D6600E0C4E6 /* KASFRateViewModel.swift */,
 				42D1803220F48D9400E0C4E6 /* Main.storyboard */,
 				42D1802520F48C9D00E0C4E6 /* Info.plist */,
+				42514CD720F57A7000C60894 /* rateViewController.swift */,
+				42514CD920F57A9E00C60894 /* rateViewModel.swift */,
+				42514CDB20F57AED00C60894 /* constants.swift */,
 			);
 			path = KAppStoreFeedback;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D1802F20F48D6600E0C4E6 /* KASFConstants.swift in Sources */,
-				42D1803120F48D6600E0C4E6 /* KASFRateViewModel.swift in Sources */,
-				42D1803020F48D6600E0C4E6 /* KASFRateViewController.swift in Sources */,
+				42514CDA20F57A9E00C60894 /* rateViewModel.swift in Sources */,
+				42514CD820F57A7000C60894 /* rateViewController.swift in Sources */,
+				42514CDC20F57AED00C60894 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,12 +207,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -261,10 +262,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

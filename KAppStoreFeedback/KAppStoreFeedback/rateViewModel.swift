@@ -1,20 +1,20 @@
 //
-//  KASFRateViewModel.swift
-//  KAppStroreFeedback
+//  rateViewModel.swift
+//  KAppStoreFeedback
 //
-//  Created by Prajwal Karanayyana Vasantha on 7/9/18.
+//  Created by Prajwal Karanayyana Vasantha on 7/10/18.
 //  Copyright © 2018 karanayyana. All rights reserved.
 //
 
 import UIKit
 
-protocol KASFRateViewModelDelegate: class {
+protocol rateViewModelDelegate: class {
     func updateViewButtons()
 }
 
-class KASFRateViewModel: NSObject {
+class rateViewModel: NSObject {
 
-    weak var viewModelDelegate : KASFRateViewModelDelegate?
+    weak var viewModelDelegate : rateViewModelDelegate?
     
     //MARK:- Configurable Constants
     private var kASFFeedbackType : KASFFeedbackType = KASFFeedbackType.emoticonsView
@@ -32,7 +32,7 @@ class KASFRateViewModel: NSObject {
     
     private var isRatingPositive : Bool = true
     //MARK:- Initialize
-    init( delegate : KASFRateViewModelDelegate?) {
+    init( delegate : rateViewModelDelegate?) {
         viewModelDelegate = delegate
     }
     
@@ -47,19 +47,19 @@ class KASFRateViewModel: NSObject {
     }
     
     func getMessageText() -> String {
-        return message ?? KASFConstants.defaultMessage
+        return message ?? constants.defaultMessage
     }
     
     func getTitleText() -> String {
-        return title ?? KASFConstants.defaultTitle
+        return title ?? constants.defaultTitle
     }
     
     func getRateButtonTitle() -> String {
-        return isRatingPositive ? rateButtonTitle ?? KASFConstants.defaultRateButtonTitle : helpButtonTitle ?? KASFConstants.defaultHelpButtonTitle
+        return isRatingPositive ? rateButtonTitle ?? constants.defaultRateButtonTitle : helpButtonTitle ?? constants.defaultHelpButtonTitle
     }
     
     func getNotNowButtonTitle() -> String {
-        return notNowButtonTitle ?? KASFConstants.defaultNotNowTitle
+        return notNowButtonTitle ?? constants.defaultNotNowTitle
     }
     
     func userSelectedRating(rating : Int) {
