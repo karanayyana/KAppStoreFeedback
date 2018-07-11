@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum KASFFeedbackType : Int {
+public enum KAppStoreFeedbackType : Int {
     case thumbsView = 1
     case emoticonsView = 2
     case ratingsView = 3

@@ -17,7 +17,7 @@ class rateViewModel: NSObject {
     weak var viewModelDelegate : rateViewModelDelegate?
     
     //MARK:- Configurable Constants
-    private var kASFFeedbackType : KASFFeedbackType = KASFFeedbackType.emoticonsView
+    private var kASFFeedbackType : KAppStoreFeedbackType = KAppStoreFeedbackType.emoticonsView
     private var title : String?
     private var message : String?
     private var notNowButtonTitle : String?
@@ -36,13 +36,13 @@ class rateViewModel: NSObject {
         viewModelDelegate = delegate
     }
     
-    public func setFeedBackType(_ kASFFeedbackType : KASFFeedbackType) {
+    public func setFeedBackType(_ kASFFeedbackType : KAppStoreFeedbackType) {
         self.kASFFeedbackType = kASFFeedbackType
     }
     
     //MARK:- ViewController Helper methods
     
-    func getKASFFeedbackType() -> KASFFeedbackType{
+    func getKASFFeedbackType() -> KAppStoreFeedbackType{
         return self.kASFFeedbackType
     }
     

@@ -9,29 +9,18 @@
 Pod::Spec.new do |s|
 
   s.name         = "KAppStoreFeedback"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Simple way to ensure possitive feedback in AppStore"
   s.description  = "Simple (3 type) modal to collect user feedback upon subsequent visit to App. Navigate to AppStore review if positive user experience, in case of negative navigate to help center/email to support."
   s.homepage     = "https://github.com/karanayyana/KAppStoreFeedback"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
   s.license      = "MIT"
-
   s.author             = { "Prajwal Karanayyana Vasantha" => "prajwal.kv1@gmail.com" }
+  s.platform     = :ios, "11.0"
 
-  # s.platform     = :ios, "8.0"
+  s.source       = { :git => "https://github.com/karanayyana/KAppStoreFeedback.git", :tag => "1.0.3" }
 
-  s.source       = { :git => "https://github.com/karanayyana/KAppStoreFeedback.git", :tag => "1.0.2" }
-
-
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
-
-  s.source_files  = "KAppStoreFeedback/**/*"
+  s.source_files  = "KAppStoreFeedback/**/*.{h,swift}"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -42,7 +31,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  # s.resource  = "icon.png"
+    s.resource  = "KAppStoreFeedback/**/*.{storyboard,xcassets}"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"

@@ -45,14 +45,14 @@ class rateViewController: UIViewController , rateViewModelDelegate{
         return viewModel
     }()
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
     //MARK:- Public methods
     
-    public func setFeedBackType(_ kASFFeedbackType : KASFFeedbackType) {
+    public func setFeedBackType(_ kASFFeedbackType : KAppStoreFeedbackType) {
         viewModel.setFeedBackType(kASFFeedbackType)
     }
     
