@@ -10,7 +10,7 @@
 		42514CD820F57A7000C60894 /* rateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD720F57A7000C60894 /* rateViewController.swift */; };
 		42514CDA20F57A9E00C60894 /* rateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD920F57A9E00C60894 /* rateViewModel.swift */; };
 		42514CDC20F57AED00C60894 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CDB20F57AED00C60894 /* constants.swift */; };
-		42514CDE20F57E9B00C60894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CDD20F57E9B00C60894 /* Assets.xcassets */; };
+		42514CE020F5BCCA00C60894 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CDF20F5BCCA00C60894 /* images.xcassets */; };
 		42D1802620F48C9D00E0C4E6 /* KAppStoreFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42D1803320F48D9400E0C4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D1803220F48D9400E0C4E6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,7 +19,7 @@
 		42514CD720F57A7000C60894 /* rateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateViewController.swift; sourceTree = "<group>"; };
 		42514CD920F57A9E00C60894 /* rateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateViewModel.swift; sourceTree = "<group>"; };
 		42514CDB20F57AED00C60894 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
-		42514CDD20F57E9B00C60894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42514CDF20F5BCCA00C60894 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		42D1802120F48C9D00E0C4E6 /* KAppStoreFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KAppStoreFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAppStoreFeedback.h; sourceTree = "<group>"; };
 		42D1802520F48C9D00E0C4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,13 +56,13 @@
 		42D1802320F48C9D00E0C4E6 /* KAppStoreFeedback */ = {
 			isa = PBXGroup;
 			children = (
-				42514CDD20F57E9B00C60894 /* Assets.xcassets */,
 				42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */,
 				42D1803220F48D9400E0C4E6 /* Main.storyboard */,
 				42D1802520F48C9D00E0C4E6 /* Info.plist */,
 				42514CD720F57A7000C60894 /* rateViewController.swift */,
 				42514CD920F57A9E00C60894 /* rateViewModel.swift */,
 				42514CDB20F57AED00C60894 /* constants.swift */,
+				42514CDF20F5BCCA00C60894 /* images.xcassets */,
 			);
 			path = KAppStoreFeedback;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42514CDE20F57E9B00C60894 /* Assets.xcassets in Resources */,
+				42514CE020F5BCCA00C60894 /* images.xcassets in Resources */,
 				42D1803320F48D9400E0C4E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
