@@ -12,6 +12,7 @@
 		42514CF320F5D5BF00C60894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42514CF120F5D5BF00C60894 /* Main.storyboard */; };
 		42514CF520F5D5C000C60894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CF420F5D5C000C60894 /* Assets.xcassets */; };
 		42514CF820F5D5C000C60894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42514CF620F5D5C000C60894 /* LaunchScreen.storyboard */; };
+		A5493B6232E9EB66779FC00D /* Pods_KAppStoreFeedbackExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595B08600B42C87DA056C066 /* Pods_KAppStoreFeedbackExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		42514CF420F5D5C000C60894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42514CF720F5D5C000C60894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42514CF920F5D5C000C60894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		595B08600B42C87DA056C066 /* Pods_KAppStoreFeedbackExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KAppStoreFeedbackExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6461388EEF53C891BC98B5AB /* Pods-KAppStoreFeedbackExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAppStoreFeedbackExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-KAppStoreFeedbackExample/Pods-KAppStoreFeedbackExample.release.xcconfig"; sourceTree = "<group>"; };
+		921A264F41D0EC7232C33559 /* Pods-KAppStoreFeedbackExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAppStoreFeedbackExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KAppStoreFeedbackExample/Pods-KAppStoreFeedbackExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5493B6232E9EB66779FC00D /* Pods_KAppStoreFeedbackExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0167DA42B7568DC77B31075A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				595B08600B42C87DA056C066 /* Pods_KAppStoreFeedbackExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A5732CBF5E8B6324A98EBE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				921A264F41D0EC7232C33559 /* Pods-KAppStoreFeedbackExample.debug.xcconfig */,
+				6461388EEF53C891BC98B5AB /* Pods-KAppStoreFeedbackExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		42514CE120F5D5BF00C60894 = {
 			isa = PBXGroup;
 			children = (
 				42514CEC20F5D5BF00C60894 /* KAppStoreFeedbackExample */,
 				42514CEB20F5D5BF00C60894 /* Products */,
+				2A5732CBF5E8B6324A98EBE5 /* Pods */,
+				0167DA42B7568DC77B31075A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42514CFC20F5D5C000C60894 /* Build configuration list for PBXNativeTarget "KAppStoreFeedbackExample" */;
 			buildPhases = (
+				CDF7794657C73E1188E07B73 /* [CP] Check Pods Manifest.lock */,
 				42514CE620F5D5BF00C60894 /* Sources */,
 				42514CE720F5D5BF00C60894 /* Frameworks */,
 				42514CE820F5D5BF00C60894 /* Resources */,
+				14C4B74C6B4A5CE917A1BC75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14C4B74C6B4A5CE917A1BC75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KAppStoreFeedbackExample/Pods-KAppStoreFeedbackExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KAppStoreFeedback/KAppStoreFeedback.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KAppStoreFeedback.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KAppStoreFeedbackExample/Pods-KAppStoreFeedbackExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDF7794657C73E1188E07B73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KAppStoreFeedbackExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42514CE620F5D5BF00C60894 /* Sources */ = {
@@ -278,6 +343,7 @@
 		};
 		42514CFD20F5D5C000C60894 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 921A264F41D0EC7232C33559 /* Pods-KAppStoreFeedbackExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +362,7 @@
 		};
 		42514CFE20F5D5C000C60894 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6461388EEF53C891BC98B5AB /* Pods-KAppStoreFeedbackExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

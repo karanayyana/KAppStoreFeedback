@@ -8,20 +8,15 @@
 
 import UIKit
 
-public class KAppStoreFeedBackView: NSObject {
+public class KAppStoreFeedBackView {
 
-    private lazy var rateVC : rateViewController = {
-        let viewModel = rateViewController(nibName: "rateViewController", bundle: .main)
-        return viewModel
-    }()
+
     
-    private override init() {
-        
-    }
-    
-    public func getRateViewController(type : KAppStoreFeedbackType) -> UIViewController {
-        rateVC.setFeedBackType(type)
-        return rateVC
+    class public func displayRateViewControllerTo(hostingViewController : UIViewController, config : KAppStoreFeedbackConfig) {
+        let frameworkBundle = Bundle(for: KAppStoreFeedbackRateViewController.self)
+        let rateVC = KAppStoreFeedbackRateViewController(nibName: "rateViewController", bundle: frameworkBundle )
+        rateVC.configureWith(kAppStoreFeedbackConfig: config)
+        hostingViewController.present(rateVC, animated: true, completion: nil)
         
     }
 }

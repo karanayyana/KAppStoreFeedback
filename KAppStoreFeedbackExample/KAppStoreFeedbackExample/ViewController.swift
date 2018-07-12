@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import KAppStoreFeedback
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        let appStoreFeedBackView =  KAppStoreFeedBackView.getRateViewController(type: KAppStoreFeedbackType.emoticonsView)
+        let config = Config()
+        KAppStoreFeedBackView.displayRateViewControllerTo(hostingViewController: self, config: config)
+//        self.present(appStoreFeedBackView, animated: true, completion: nil)
     }
-
-
 }
 

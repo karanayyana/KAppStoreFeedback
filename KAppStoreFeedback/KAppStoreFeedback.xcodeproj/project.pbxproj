@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42514CD820F57A7000C60894 /* rateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD720F57A7000C60894 /* rateViewController.swift */; };
-		42514CDA20F57A9E00C60894 /* rateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD920F57A9E00C60894 /* rateViewModel.swift */; };
-		42514CDC20F57AED00C60894 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CDB20F57AED00C60894 /* constants.swift */; };
+		42514CD820F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD720F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift */; };
+		42514CDA20F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD920F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift */; };
+		42514CDC20F57AED00C60894 /* KAppStoreFeedbackConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CDB20F57AED00C60894 /* KAppStoreFeedbackConstants.swift */; };
 		42514CE020F5BCCA00C60894 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CDF20F5BCCA00C60894 /* images.xcassets */; };
 		42514D0020F5E07100C60894 /* KAppStoreFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CFF20F5E07100C60894 /* KAppStoreFeedBackView.swift */; };
+		42A6ED8120F5E6E90093C2BE /* rateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A6ED8020F5E6E90093C2BE /* rateViewController.xib */; };
 		42D1802620F48C9D00E0C4E6 /* KAppStoreFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42D1803320F48D9400E0C4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D1803220F48D9400E0C4E6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42514CD720F57A7000C60894 /* rateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateViewController.swift; sourceTree = "<group>"; };
-		42514CD920F57A9E00C60894 /* rateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rateViewModel.swift; sourceTree = "<group>"; };
-		42514CDB20F57AED00C60894 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		42514CD720F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackRateViewController.swift; sourceTree = "<group>"; };
+		42514CD920F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackRateViewModel.swift; sourceTree = "<group>"; };
+		42514CDB20F57AED00C60894 /* KAppStoreFeedbackConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackConstants.swift; sourceTree = "<group>"; };
 		42514CDF20F5BCCA00C60894 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		42514CFF20F5E07100C60894 /* KAppStoreFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedBackView.swift; sourceTree = "<group>"; };
+		42A6ED8020F5E6E90093C2BE /* rateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rateViewController.xib; sourceTree = SOURCE_ROOT; };
 		42D1802120F48C9D00E0C4E6 /* KAppStoreFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KAppStoreFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAppStoreFeedback.h; sourceTree = "<group>"; };
 		42D1802520F48C9D00E0C4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42D1803220F48D9400E0C4E6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */,
-				42D1803220F48D9400E0C4E6 /* Main.storyboard */,
 				42D1802520F48C9D00E0C4E6 /* Info.plist */,
-				42514CD720F57A7000C60894 /* rateViewController.swift */,
-				42514CD920F57A9E00C60894 /* rateViewModel.swift */,
-				42514CDB20F57AED00C60894 /* constants.swift */,
-				42514CDF20F5BCCA00C60894 /* images.xcassets */,
+				42514CD720F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift */,
+				42514CD920F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift */,
 				42514CFF20F5E07100C60894 /* KAppStoreFeedBackView.swift */,
+				42514CDB20F57AED00C60894 /* KAppStoreFeedbackConstants.swift */,
+				42A6ED8020F5E6E90093C2BE /* rateViewController.xib */,
+				42514CDF20F5BCCA00C60894 /* images.xcassets */,
 			);
 			path = KAppStoreFeedback;
 			sourceTree = "<group>";
@@ -140,8 +140,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A6ED8120F5E6E90093C2BE /* rateViewController.xib in Resources */,
 				42514CE020F5BCCA00C60894 /* images.xcassets in Resources */,
-				42D1803320F48D9400E0C4E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42514CDA20F57A9E00C60894 /* rateViewModel.swift in Sources */,
-				42514CD820F57A7000C60894 /* rateViewController.swift in Sources */,
-				42514CDC20F57AED00C60894 /* constants.swift in Sources */,
+				42514CDA20F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift in Sources */,
+				42514CD820F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift in Sources */,
+				42514CDC20F57AED00C60894 /* KAppStoreFeedbackConstants.swift in Sources */,
 				42514D0020F5E07100C60894 /* KAppStoreFeedBackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

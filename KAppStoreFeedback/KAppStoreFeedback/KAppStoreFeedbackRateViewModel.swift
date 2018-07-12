@@ -8,62 +8,60 @@
 
 import UIKit
 
-protocol rateViewModelDelegate: class {
+protocol KAppStoreFeedbackRateViewModelDelegate: class {
     func updateViewButtons()
 }
 
-class rateViewModel: NSObject {
+class KAppStoreFeedbackRateViewModel: NSObject {
 
-    weak var viewModelDelegate : rateViewModelDelegate?
+    weak var viewModelDelegate : KAppStoreFeedbackRateViewModelDelegate?
     
     //MARK:- Configurable Constants
-    private var kASFFeedbackType : KAppStoreFeedbackType = KAppStoreFeedbackType.emoticonsView
-    private var title : String?
-    private var message : String?
-    private var notNowButtonTitle : String?
-    private var rateButtonTitle : String?
-    private var helpButtonTitle : String?
+    private var kAppStoreFeedbackConfig : KAppStoreFeedbackConfig = KAppStoreFeedbackConfig()
     
     private var itunesLink : String?
     private var helpCenterLink : String?
     private var helpEmail : String?
     
+    private var minimumLoginAttempt : Int = 15
+    
     //MARK:- local Variables
     
     private var isRatingPositive : Bool = true
+    
     //MARK:- Initialize
-    init( delegate : rateViewModelDelegate?) {
+    init( delegate : KAppStoreFeedbackRateViewModelDelegate?) {
         viewModelDelegate = delegate
     }
     
-    public func setFeedBackType(_ kASFFeedbackType : KAppStoreFeedbackType) {
-        self.kASFFeedbackType = kASFFeedbackType
+    func configureWith(_ kAppStoreFeedbackConfig : KAppStoreFeedbackConfig ) {
+        self.kAppStoreFeedbackConfig = kAppStoreFeedbackConfig
     }
     
     //MARK:- ViewController Helper methods
     
     func getKASFFeedbackType() -> KAppStoreFeedbackType{
-        return self.kASFFeedbackType
+        return kAppStoreFeedbackConfig.kASFFeedbackType
     }
     
     func getMessageText() -> String {
-        return message ?? constants.defaultMessage
+        return kAppStoreFeedbackConfig.message
     }
     
     func getTitleText() -> String {
-        return title ?? constants.defaultTitle
+        return kAppStoreFeedbackConfig.title
     }
     
     func getRateButtonTitle() -> String {
-        return isRatingPositive ? rateButtonTitle ?? constants.defaultRateButtonTitle : helpButtonTitle ?? constants.defaultHelpButtonTitle
+        return isRatingPositive ? kAppStoreFeedbackConfig.rateButtonTitle : kAppStoreFeedbackConfig.helpButtonTitle
     }
     
     func getNotNowButtonTitle() -> String {
-        return notNowButtonTitle ?? constants.defaultNotNowTitle
+        return kAppStoreFeedbackConfig.notNowButtonTitle
     }
     
     func userSelectedRating(rating : Int) {
-        switch kASFFeedbackType {
+        switch kAppStoreFeedbackConfig.kASFFeedbackType {
         case .emoticonsView:
             isRatingPositive = rating >= 3 ? true : false
             break
