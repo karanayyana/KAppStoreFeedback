@@ -10,13 +10,17 @@ import UIKit
 
 public class KAppStoreFeedBackView {
 
-
-    
-    class public func displayRateViewControllerTo(hostingViewController : UIViewController, config : KAppStoreFeedbackConfig) {
-        let frameworkBundle = Bundle(for: KAppStoreFeedbackRateViewController.self)
-        let rateVC = KAppStoreFeedbackRateViewController(nibName: "rateViewController", bundle: frameworkBundle )
-        rateVC.configureWith(kAppStoreFeedbackConfig: config)
-        hostingViewController.present(rateVC, animated: true, completion: nil)
+    class public func displayRateViewControllerTo(
+                                hostingViewController : UIViewController,
+                                navigationConfig : KAppStoreFeedbackNavigationConfig,
+                                config : KAppStoreFeedbackConfig?,
+                                configUIElements : KAppStoreFeedbackUIElementsConfig?) {
         
+        let frameworkBundle = Bundle(for: KAppStoreFeedbackRateViewController.self)
+        let rateVC = KAppStoreFeedbackRateViewController(nibName: "KAppStoreFeedbackRateViewController", bundle: frameworkBundle )
+        
+        rateVC.configureWith(hostingViewController: hostingViewController, kAppStoreFeedbackNavigationConfig: navigationConfig, kAppStoreFeedbackConfig: config, kAppStoreFeedbackUIElementsConfig: configUIElements)
+        rateVC.modalPresentationStyle = .overCurrentContext
+        hostingViewController.present(rateVC, animated: true, completion: nil)
     }
 }

@@ -14,35 +14,8 @@ public enum KAppStoreFeedbackType : Int {
     case ratingsView = 3
 }
 
-public struct KAppStoreFeedbackConfig {
-    
-    public var kASFFeedbackType: KAppStoreFeedbackType
-    public var title: String
-    public var message: String
-    public var notNowButtonTitle: String
-    public var rateButtonTitle: String
-    public var helpButtonTitle: String
-    public var minimumLoginAttempt : Int
-
-    public init(kASFFeedbackType: KAppStoreFeedbackType = KAppStoreFeedbackType.thumbsView,
-                title: String = "Tell us what you think",
-                message: String = ("If you enjoy using " + (Bundle.main.infoDictionary!["CFBundleName"] as! String) + ", would you mind taking a moment to rate it?"),
-                notNowButtonTitle: String = "Not Now",
-                rateButtonTitle:String = "Rate us on App Store?",
-                helpButtonTitle: String = "How can we improve?",
-                minimumLoginAttempt : Int = 5) {
-        
-        self.kASFFeedbackType = kASFFeedbackType
-        self.title = title
-        self.message = message
-        self.notNowButtonTitle = notNowButtonTitle
-        self.rateButtonTitle = rateButtonTitle
-        self.helpButtonTitle = helpButtonTitle
-        self.minimumLoginAttempt = minimumLoginAttempt
-    }
+public protocol KAppStoreFeedbackProtocol  : class {
+    func navigateToPossitiveFeedBackHandler()
+    func navigateToNegativeFeedBackHandler()
 }
 
-
-class KAppStoreFeedbackConstants: NSObject {
-   
-}

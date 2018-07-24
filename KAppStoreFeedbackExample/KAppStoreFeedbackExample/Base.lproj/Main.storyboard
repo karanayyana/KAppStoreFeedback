@@ -1,28 +1,585 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="84A-2f-B2E">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="6Dr-yX-n5E">
+            <objects>
+                <navigationController id="84A-2f-B2E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qIT-Eu-JFy">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zqW-dl-6oE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o55-w5-DAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-954" y="29"/>
+        </scene>
+        <!--KAppStoreFeedbackExample-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KAppStoreFeedbackExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYk-b5-fJ7">
+                                <rect key="frame" x="0.0" y="74" width="414" height="602"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-Wc-qa1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="313.33333333333331"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Alert Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBJ-c7-Iwu">
+                                                <rect key="frame" x="16" y="16" width="382" height="21.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JDd-Wr-dcN">
+                                                <rect key="frame" x="16" y="53.666666666666671" width="382" height="29"/>
+                                                <segments>
+                                                    <segment title="Ratings"/>
+                                                    <segment title="Emoticons"/>
+                                                    <segment title="Thumbs-Up"/>
+                                                </segments>
+                                                <color key="tintColor" red="0.0" green="0.72549019609999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </segmentedControl>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zeJ-jQ-H69">
+                                                <rect key="frame" x="16" y="98.333333333333343" width="382" height="215.00000000000003"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULs-Dt-lLV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Hzg-Hb-fkd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYE-mP-DlZ">
+                                                        <rect key="frame" x="0.0" y="1" width="382" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="jke-vW-Yx2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        <state key="normal" title="Modify Alert Text Fields">
+                                                            <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="modifyAlertClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P14-dn-KOu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIm-oc-ZmD">
+                                                        <rect key="frame" x="0.0" y="36" width="382" height="1"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="sWQ-Zx-zGK"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JVY-ap-BWG">
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="241"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overide alert title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyv-8J-pI8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type to overide title " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-kw-mpn">
+                                                                <rect key="frame" x="0.0" y="5" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="OKq-Y6-b3b"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6ba-xW-GAZ"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overide alert message body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxP-81-tQC">
+                                                                <rect key="frame" x="0.0" y="40" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type to overide message " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OEv-CV-wS2">
+                                                                <rect key="frame" x="0.0" y="45" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="cU9-zI-QqA"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ASH-mY-TP0"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overide alert not now buttun title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSG-R6-Xyd">
+                                                                <rect key="frame" x="0.0" y="79.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type to overide &quot;Not Now&quot; button Title " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0q-4Z-mK7">
+                                                                <rect key="frame" x="0.0" y="84.999999999999972" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="3cW-DI-SnA"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5Ad-4T-WLh"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overide alert help button title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ej-nM-zPT">
+                                                                <rect key="frame" x="0.0" y="119.99999999999997" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type to overide &quot;Help&quot; button Title " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-GW-ksO">
+                                                                <rect key="frame" x="0.0" y="124.99999999999997" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="sjy-Tt-ayH"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xWS-YC-oSt"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overide alert rate button title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-C3-FaZ">
+                                                                <rect key="frame" x="0.0" y="159.99999999999997" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type to overide &quot;Rate&quot; button Title " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-TY-upn">
+                                                                <rect key="frame" x="0.0" y="164.99999999999997" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Tke-RD-xJH"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gqh-AU-VW9"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum number of App lauch to triger alert" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQY-vU-9gJ">
+                                                                <rect key="frame" x="0.0" y="199.99999999999997" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Minimum login atempts to show alert" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUx-Ha-som">
+                                                                <rect key="frame" x="0.0" y="204.99999999999997" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="3Fh-Vc-ZpB"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fe1-o4-rFL"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m43-di-iLE">
+                                                                <rect key="frame" x="0.0" y="239.99999999999997" width="382" height="1"/>
+                                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="f5v-Ae-vhO"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLm-sQ-uMo">
+                                                        <rect key="frame" x="0.0" y="37" width="382" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="exZ-d2-uIa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                        <state key="normal" title="Modify Alert UI Elements">
+                                                            <color key="titleColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="modifyTextUIElementOverrideClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwt-gd-Lwe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLi-eb-Ytg">
+                                                        <rect key="frame" x="0.0" y="72" width="382" height="1"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="pBb-UI-tGq"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JIy-ww-QA1">
+                                                        <rect key="frame" x="0.0" y="73" width="382" height="101"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5z-fw-OdM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Background Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FhR-ga-ISD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15Q-CD-AHU">
+                                                                <rect key="frame" x="0.0" y="5" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Border Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JQZ-xK-aVf"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubn-oj-MFa">
+                                                                <rect key="frame" x="0.0" y="10" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Title Background Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RAq-cS-zph"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xb1-h8-Gca">
+                                                                <rect key="frame" x="0.0" y="14.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Title Font Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0o-wM-93W"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V13-fH-VSH">
+                                                                <rect key="frame" x="0.0" y="19.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Message Font Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0l-ZN-9xC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-Zw-vvB">
+                                                                <rect key="frame" x="0.0" y="24.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Not Now Button Font Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iPQ-Cp-oQB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4J-nW-0KO">
+                                                                <rect key="frame" x="0.0" y="29.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Rate Button Font Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W5M-ti-ul7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuc-Sz-DSC">
+                                                                <rect key="frame" x="0.0" y="34.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Help Button Font Color">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectColorClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X4L-kr-Jhe"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgh-IY-jVQ">
+                                                                <rect key="frame" x="0.0" y="39.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Title Font">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectFontClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdt-mh-8rx"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZH-7G-6NE">
+                                                                <rect key="frame" x="0.0" y="44.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Message Font">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectFontClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="phj-r5-fyq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4l2-MR-Gsd">
+                                                                <rect key="frame" x="0.0" y="49.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Secondry Button Font">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectFontClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SpV-Bm-ZQ9"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtH-PL-NNS">
+                                                                <rect key="frame" x="0.0" y="54.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <state key="normal" title="Alert Primary Button Font">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="selectFontClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JjG-mc-xJj"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Corner Radius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OS8-Ku-LRa">
+                                                                <rect key="frame" x="0.0" y="59.999999999999972" width="382" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Type to overide title " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbu-UH-M75">
+                                                                <rect key="frame" x="0.0" y="64.999999999999972" width="382" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="3bl-YZ-eH0"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HdJ-iu-34q"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRU-iA-APi">
+                                                                <rect key="frame" x="0.0" y="99.999999999999972" width="382" height="1"/>
+                                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="gCh-yQ-l9d"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-uN-jNJ">
+                                                        <rect key="frame" x="0.0" y="73" width="382" height="142"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AppStore Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-rf-4q0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Link To AppStore" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Cv-uU-YMg">
+                                                                <rect key="frame" x="0.0" y="21.999999999999972" width="382" height="22"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ray-9N-Wix"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Center Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQC-te-YfQ">
+                                                                <rect key="frame" x="0.0" y="48.999999999999972" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Help Center link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGY-8r-Cc1">
+                                                                <rect key="frame" x="0.0" y="70.999999999999972" width="382" height="22"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="11o-S0-QmX"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Help Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c92-bu-Bwd">
+                                                                <rect key="frame" x="0.0" y="97.999999999999972" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="p@p.com" borderStyle="bezel" placeholder="Enter Email Address To Recive Feedback" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQ8-UI-7XT">
+                                                                <rect key="frame" x="0.0" y="119.99999999999997" width="382" height="22"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WmQ-9a-cTz"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="JDd-Wr-dcN" firstAttribute="leading" secondItem="r1Z-Wc-qa1" secondAttribute="leading" constant="16" id="BQb-K9-f1p"/>
+                                            <constraint firstItem="rBJ-c7-Iwu" firstAttribute="centerX" secondItem="r1Z-Wc-qa1" secondAttribute="centerX" id="Eka-2r-72q"/>
+                                            <constraint firstAttribute="trailing" secondItem="zeJ-jQ-H69" secondAttribute="trailing" constant="16" id="SlI-AW-Z0c"/>
+                                            <constraint firstItem="zeJ-jQ-H69" firstAttribute="leading" secondItem="r1Z-Wc-qa1" secondAttribute="leading" constant="16" id="UlH-Bs-eNV"/>
+                                            <constraint firstItem="JDd-Wr-dcN" firstAttribute="top" secondItem="rBJ-c7-Iwu" secondAttribute="bottom" constant="16" id="VKD-BD-P0W"/>
+                                            <constraint firstAttribute="trailing" secondItem="rBJ-c7-Iwu" secondAttribute="trailing" constant="16" id="VWS-gP-02A"/>
+                                            <constraint firstItem="rBJ-c7-Iwu" firstAttribute="leading" secondItem="r1Z-Wc-qa1" secondAttribute="leading" constant="16" id="X32-QU-ffQ"/>
+                                            <constraint firstItem="rBJ-c7-Iwu" firstAttribute="top" secondItem="r1Z-Wc-qa1" secondAttribute="top" constant="16" id="exg-wW-K8L"/>
+                                            <constraint firstAttribute="trailing" secondItem="JDd-Wr-dcN" secondAttribute="trailing" constant="16" id="nxs-12-mc3"/>
+                                            <constraint firstItem="zeJ-jQ-H69" firstAttribute="top" secondItem="JDd-Wr-dcN" secondAttribute="bottom" constant="16" id="q0k-jI-RJX"/>
+                                            <constraint firstAttribute="bottom" secondItem="zeJ-jQ-H69" secondAttribute="bottom" id="sxG-3q-r57"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="r1Z-Wc-qa1" secondAttribute="bottom" id="30f-yx-geY"/>
+                                    <constraint firstItem="r1Z-Wc-qa1" firstAttribute="top" secondItem="kYk-b5-fJ7" secondAttribute="top" id="9fE-62-DKw"/>
+                                    <constraint firstAttribute="trailing" secondItem="r1Z-Wc-qa1" secondAttribute="trailing" id="Weu-hr-bHW"/>
+                                    <constraint firstItem="r1Z-Wc-qa1" firstAttribute="width" secondItem="kYk-b5-fJ7" secondAttribute="width" id="vHO-8h-meB"/>
+                                    <constraint firstItem="r1Z-Wc-qa1" firstAttribute="leading" secondItem="kYk-b5-fJ7" secondAttribute="leading" id="z8E-q6-Xlp"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slf-cg-KtT">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.72549019609999998" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zuv-Le-M0F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Display Alert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlertClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bG1-jx-3Fg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Slf-cg-KtT" firstAttribute="top" secondItem="kYk-b5-fJ7" secondAttribute="bottom" constant="16" id="1bQ-fD-R4P"/>
+                            <constraint firstItem="kYk-b5-fJ7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3YV-r3-tCV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kYk-b5-fJ7" secondAttribute="trailing" id="Kez-IA-262"/>
+                            <constraint firstItem="kYk-b5-fJ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NQo-A3-4UY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Slf-cg-KtT" secondAttribute="trailing" id="XRM-dX-LRc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Slf-cg-KtT" secondAttribute="bottom" id="ZIB-0J-qN5"/>
+                            <constraint firstItem="Slf-cg-KtT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i29-Pv-g3A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="KAppStoreFeedbackExample" id="Nb7-Jb-AgC"/>
+                    <connections>
+                        <outlet property="alertBackgroundColorButton" destination="e5z-fw-OdM" id="4pQ-5j-PHr"/>
+                        <outlet property="alertBorderColorButton" destination="15Q-CD-AHU" id="GXa-iU-qmx"/>
+                        <outlet property="alertCornerRadius" destination="Gbu-UH-M75" id="xLF-Qv-298"/>
+                        <outlet property="alertHelpButtonFontColorButton" destination="fuc-Sz-DSC" id="DPI-LZ-e2v"/>
+                        <outlet property="alertMessageFontButton" destination="NZH-7G-6NE" id="k16-Q6-qzZ"/>
+                        <outlet property="alertMessageFontColorButton" destination="V13-fH-VSH" id="Nw9-10-edS"/>
+                        <outlet property="alertNotNowButtonFontColorButton" destination="yKY-Zw-vvB" id="9td-sn-440"/>
+                        <outlet property="alertPrimaryButtonFontButton" destination="rtH-PL-NNS" id="YxY-vy-i75"/>
+                        <outlet property="alertRateButtonFontColorButton" destination="k4J-nW-0KO" id="L0v-vV-YY5"/>
+                        <outlet property="alertSecondryButtonFontButton" destination="4l2-MR-Gsd" id="LIn-nL-Fhw"/>
+                        <outlet property="alertTitleBackgroundColorButton" destination="Ubn-oj-MFa" id="YW8-7e-qW2"/>
+                        <outlet property="alertTitleFontButton" destination="Hgh-IY-jVQ" id="rEx-op-K1T"/>
+                        <outlet property="alertTitleFontColorButton" destination="Xb1-h8-Gca" id="9ry-n9-KRK"/>
+                        <outlet property="alertType" destination="JDd-Wr-dcN" id="EFJ-bN-Pkx"/>
+                        <outlet property="appStoreLinkTextField" destination="6Cv-uU-YMg" id="ntm-z5-bZG"/>
+                        <outlet property="attemptTextField" destination="sUx-Ha-som" id="h8C-hd-Lh5"/>
+                        <outlet property="helpCenterLinkTextField" destination="HGY-8r-Cc1" id="TbS-gn-hGb"/>
+                        <outlet property="helpEmailTextField" destination="CQ8-UI-7XT" id="tfI-Up-3Uh"/>
+                        <outlet property="helpTextField" destination="eUz-GW-ksO" id="ne5-yz-Ojb"/>
+                        <outlet property="messageTextField" destination="OEv-CV-wS2" id="Vak-px-nzB"/>
+                        <outlet property="notNotTextField" destination="L0q-4Z-mK7" id="9Zh-1Q-U9m"/>
+                        <outlet property="rateTextField" destination="KUi-TY-upn" id="Ss3-Ty-cwY"/>
+                        <outlet property="textOverrideView" destination="JVY-ap-BWG" id="FwZ-wy-FlO"/>
+                        <outlet property="textUIElementOverrideView" destination="JIy-ww-QA1" id="YKN-TC-XJv"/>
+                        <outlet property="titleTextField" destination="6L5-kw-mpn" id="ZYW-e3-kbQ"/>
+                        <segue destination="z0f-2Q-ZH8" kind="show" identifier="selectColorSegue" id="XrJ-Uo-rEB"/>
+                        <segue destination="Rop-Pl-e7f" kind="show" identifier="selectFontSegue" id="Lcd-Ky-ICQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-25" y="29"/>
+        </scene>
+        <!--Color Picker Table View Controller-->
+        <scene sceneID="HA6-yH-gOJ">
+            <objects>
+                <tableViewController id="z0f-2Q-ZH8" customClass="colorPickerTableViewController" customModule="KAppStoreFeedbackExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9gS-pR-nhw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorPickerCell" id="d6i-2b-5Px">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d6i-2b-5Px" id="wih-gt-csM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z0f-2Q-ZH8" id="fkv-1Z-mVp"/>
+                            <outlet property="delegate" destination="z0f-2Q-ZH8" id="fBl-HC-Tks"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zuv-Uh-BUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="29"/>
+        </scene>
+        <!--Font Picker Table View Controller-->
+        <scene sceneID="tjc-YI-z08">
+            <objects>
+                <tableViewController id="Rop-Pl-e7f" customClass="fontPickerTableViewController" customModule="KAppStoreFeedbackExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="axB-ei-FcH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fontPickerCell" id="QJN-JZ-Of4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QJN-JZ-Of4" id="qrN-cy-ymH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rop-Pl-e7f" id="75a-Gk-mAM"/>
+                            <outlet property="delegate" destination="Rop-Pl-e7f" id="MVT-Rg-WQm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHI-9a-4JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861" y="781"/>
         </scene>
     </scenes>
 </document>

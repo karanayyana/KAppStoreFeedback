@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		420B6D2920F88E8E00E178F5 /* colorPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B6D2820F88E8E00E178F5 /* colorPickerTableViewController.swift */; };
 		42514CEE20F5D5BF00C60894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CED20F5D5BF00C60894 /* AppDelegate.swift */; };
 		42514CF020F5D5BF00C60894 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CEF20F5D5BF00C60894 /* ViewController.swift */; };
 		42514CF320F5D5BF00C60894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42514CF120F5D5BF00C60894 /* Main.storyboard */; };
 		42514CF520F5D5C000C60894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CF420F5D5C000C60894 /* Assets.xcassets */; };
 		42514CF820F5D5C000C60894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42514CF620F5D5C000C60894 /* LaunchScreen.storyboard */; };
+		42E24F7020F899EB00CE3EFF /* fontPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E24F6F20F899EB00CE3EFF /* fontPickerTableViewController.swift */; };
 		A5493B6232E9EB66779FC00D /* Pods_KAppStoreFeedbackExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595B08600B42C87DA056C066 /* Pods_KAppStoreFeedbackExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		420B6D2820F88E8E00E178F5 /* colorPickerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorPickerTableViewController.swift; sourceTree = "<group>"; };
 		42514CEA20F5D5BF00C60894 /* KAppStoreFeedbackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAppStoreFeedbackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42514CED20F5D5BF00C60894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42514CEF20F5D5BF00C60894 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,6 +26,7 @@
 		42514CF420F5D5C000C60894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42514CF720F5D5C000C60894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42514CF920F5D5C000C60894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E24F6F20F899EB00CE3EFF /* fontPickerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontPickerTableViewController.swift; sourceTree = "<group>"; };
 		595B08600B42C87DA056C066 /* Pods_KAppStoreFeedbackExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KAppStoreFeedbackExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6461388EEF53C891BC98B5AB /* Pods-KAppStoreFeedbackExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAppStoreFeedbackExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-KAppStoreFeedbackExample/Pods-KAppStoreFeedbackExample.release.xcconfig"; sourceTree = "<group>"; };
 		921A264F41D0EC7232C33559 /* Pods-KAppStoreFeedbackExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KAppStoreFeedbackExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KAppStoreFeedbackExample/Pods-KAppStoreFeedbackExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			children = (
 				42514CED20F5D5BF00C60894 /* AppDelegate.swift */,
 				42514CEF20F5D5BF00C60894 /* ViewController.swift */,
+				420B6D2820F88E8E00E178F5 /* colorPickerTableViewController.swift */,
+				42E24F6F20F899EB00CE3EFF /* fontPickerTableViewController.swift */,
 				42514CF120F5D5BF00C60894 /* Main.storyboard */,
 				42514CF420F5D5C000C60894 /* Assets.xcassets */,
 				42514CF620F5D5C000C60894 /* LaunchScreen.storyboard */,
@@ -200,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420B6D2920F88E8E00E178F5 /* colorPickerTableViewController.swift in Sources */,
 				42514CF020F5D5BF00C60894 /* ViewController.swift in Sources */,
+				42E24F7020F899EB00CE3EFF /* fontPickerTableViewController.swift in Sources */,
 				42514CEE20F5D5BF00C60894 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FF2P35WQ89;
 				INFOPLIST_FILE = KAppStoreFeedbackExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FF2P35WQ89;
 				INFOPLIST_FILE = KAppStoreFeedbackExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

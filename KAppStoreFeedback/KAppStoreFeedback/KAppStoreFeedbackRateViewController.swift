@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import MessageUI
 
 class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackRateViewModelDelegate{
 
-    
+    @IBOutlet weak var feedbackView: UIView!
+    @IBOutlet weak var feedbackBackgroundView: UIView!
     @IBOutlet weak var emoticonView: UIView!
     @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var thumbsView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var buttonTopSeperaterView: UIView!
+    @IBOutlet weak var buttonBottomSeperaterView: UIView!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var notNowButton: UIButton!
@@ -45,22 +49,39 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
         return viewModel
     }()
     
-    override public func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        feedbackView.alpha = 0
         setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            self?.feedbackView.alpha = 1
+        }
+        
     }
     
     //MARK:- Public methods
     
-    func configureWith(kAppStoreFeedbackConfig : KAppStoreFeedbackConfig ) {
-        viewModel.configureWith(kAppStoreFeedbackConfig)
+    func configureWith(
+                hostingViewController : UIViewController,
+                kAppStoreFeedbackNavigationConfig :KAppStoreFeedbackNavigationConfig,
+                kAppStoreFeedbackConfig : KAppStoreFeedbackConfig?,
+                kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig? ) {
+        viewModel.configureWith(
+            hostingViewController: hostingViewController, kAppStoreFeedbackNavigationConfig: kAppStoreFeedbackNavigationConfig,
+                        kAppStoreFeedbackConfig: kAppStoreFeedbackConfig,
+                        kAppStoreFeedbackUIElementsConfig: kAppStoreFeedbackUIElementsConfig)
     }
     
     //MARK:- Private Methods
     
     private func setupView() {
         hideAllFeedbackTypes()
-        switch viewModel.getKASFFeedbackType() {
+        switch viewModel.kAppStoreFeedbackConfig.kASFFeedbackType {
         case .emoticonsView:
             emoticonView.isHidden = false
             break
@@ -73,8 +94,32 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
         }
         buttonView.isHidden = true
         message.isHidden = false
-        message.text =  viewModel.getMessageText()
-        titleLabel.text = viewModel.getTitleText()
+        message.text =  viewModel.kAppStoreFeedbackConfig.message
+        titleLabel.text = viewModel.kAppStoreFeedbackConfig.title
+        notNowButton.setTitle(viewModel.kAppStoreFeedbackConfig.notNowButtonTitle, for: .normal)
+        
+        //kAppStoreFeedbackUIElementsConfig
+        feedbackView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertBorderColor
+        buttonTopSeperaterView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertBorderColor
+        buttonBottomSeperaterView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertBorderColor
+        feedbackBackgroundView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertBackgroundColor
+        headerView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertTitleBackgroundColor
+        titleLabel.textColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertTitleFontColor
+        message.textColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertMessageFontColor
+        notNowButton.setTitleColor(viewModel.kAppStoreFeedbackUIElementsConfig.alertNotNowButtonFontColor, for: .normal)
+
+        titleLabel.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertTitleFont
+        message.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertMessageFont
+        rateButton.titleLabel?.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertPrimaryButtonFont
+        notNowButton.titleLabel?.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertSecondryButtonFont
+        
+        feedbackView.layer.cornerRadius = CGFloat(viewModel.kAppStoreFeedbackUIElementsConfig.alertCornerRadius)
+        feedbackBackgroundView.layer.cornerRadius = CGFloat(viewModel.kAppStoreFeedbackUIElementsConfig.alertCornerRadius)
+        feedbackView.layer.masksToBounds = true
+        feedbackBackgroundView.layer.masksToBounds = true
+        
+        
+        
     }
     
     private func hideAllFeedbackTypes() {
@@ -87,9 +132,28 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
     
     func updateViewButtons() {
         rateButton.setTitle(viewModel.getRateButtonTitle() , for: .normal)
-        notNowButton.setTitle(viewModel.getNotNowButtonTitle(), for: .normal)
-        message.isHidden = true
-        buttonView.isHidden = false
+        rateButton.setTitleColor(viewModel.getRateButtonFontColor(), for: .normal)
+
+        // Delay hide action or else there will be a flash on UI
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
+            if let nonNilSelf = self {
+                nonNilSelf.message.isHidden = true
+                nonNilSelf.buttonView.isHidden = false
+            }
+        }
+    }
+    
+    func presentViewController(viewToPresent: UIViewController) {
+        present(viewToPresent, animated: true)
+    }
+    
+    func dismissViewController() {
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.view.backgroundColor = UIColor.clear
+            self?.feedbackView.alpha = 0
+        }) { [weak self] (_) in
+            self?.dismiss(animated: false, completion: nil)
+        }
     }
     
     //MARK:- IBAction
@@ -177,4 +241,28 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
         }
         viewModel.userSelectedRating(rating: sender.tag)
     }
+    
+    
+    @IBAction func notNowClicked(_ sender : UIButton) {
+
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.view.backgroundColor = UIColor.clear
+            self?.feedbackView.alpha = 0
+        }) { [weak self] (_) in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func primaryButtonClicked(_ sender : UIButton) {
+        if self.viewModel.isRatingPositive {
+            self.viewModel.handlePossitiveFeedBackInteraction()
+        }else {
+            self.viewModel.handleNegetiveFeedBackInteraction()
+        }
+    }
+    
+    //MARK:- User Interactions
+    
+   
 }

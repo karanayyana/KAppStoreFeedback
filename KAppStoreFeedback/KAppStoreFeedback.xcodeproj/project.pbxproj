@@ -7,22 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4208B97A20F7195300636CCB /* KAppStoreFeedbackRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4208B97920F7195300636CCB /* KAppStoreFeedbackRateViewController.xib */; };
+		420B80762107B7A700F031EF /* KAppStoreFeedbackNavigationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B80752107B7A700F031EF /* KAppStoreFeedbackNavigationConfig.swift */; };
+		420B80782107B7C900F031EF /* KAppStoreFeedbackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B80772107B7C900F031EF /* KAppStoreFeedbackConfig.swift */; };
+		420B807A2107B81B00F031EF /* KAppStoreFeedbackUIElementsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420B80792107B81B00F031EF /* KAppStoreFeedbackUIElementsConfig.swift */; };
 		42514CD820F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD720F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift */; };
 		42514CDA20F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CD920F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift */; };
 		42514CDC20F57AED00C60894 /* KAppStoreFeedbackConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CDB20F57AED00C60894 /* KAppStoreFeedbackConstants.swift */; };
-		42514CE020F5BCCA00C60894 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CDF20F5BCCA00C60894 /* images.xcassets */; };
+		42514CE020F5BCCA00C60894 /* KAppStoreFeedbackImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42514CDF20F5BCCA00C60894 /* KAppStoreFeedbackImages.xcassets */; };
 		42514D0020F5E07100C60894 /* KAppStoreFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42514CFF20F5E07100C60894 /* KAppStoreFeedBackView.swift */; };
-		42A6ED8120F5E6E90093C2BE /* rateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A6ED8020F5E6E90093C2BE /* rateViewController.xib */; };
 		42D1802620F48C9D00E0C4E6 /* KAppStoreFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4208B97920F7195300636CCB /* KAppStoreFeedbackRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KAppStoreFeedbackRateViewController.xib; sourceTree = "<group>"; };
+		420B80752107B7A700F031EF /* KAppStoreFeedbackNavigationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackNavigationConfig.swift; sourceTree = "<group>"; };
+		420B80772107B7C900F031EF /* KAppStoreFeedbackConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackConfig.swift; sourceTree = "<group>"; };
+		420B80792107B81B00F031EF /* KAppStoreFeedbackUIElementsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackUIElementsConfig.swift; sourceTree = "<group>"; };
 		42514CD720F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackRateViewController.swift; sourceTree = "<group>"; };
 		42514CD920F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackRateViewModel.swift; sourceTree = "<group>"; };
 		42514CDB20F57AED00C60894 /* KAppStoreFeedbackConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedbackConstants.swift; sourceTree = "<group>"; };
-		42514CDF20F5BCCA00C60894 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		42514CDF20F5BCCA00C60894 /* KAppStoreFeedbackImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KAppStoreFeedbackImages.xcassets; sourceTree = "<group>"; };
 		42514CFF20F5E07100C60894 /* KAppStoreFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAppStoreFeedBackView.swift; sourceTree = "<group>"; };
-		42A6ED8020F5E6E90093C2BE /* rateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = rateViewController.xib; sourceTree = SOURCE_ROOT; };
 		42D1802120F48C9D00E0C4E6 /* KAppStoreFeedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KAppStoreFeedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D1802420F48C9D00E0C4E6 /* KAppStoreFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KAppStoreFeedback.h; sourceTree = "<group>"; };
 		42D1802520F48C9D00E0C4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,8 +70,11 @@
 				42514CD920F57A9E00C60894 /* KAppStoreFeedbackRateViewModel.swift */,
 				42514CFF20F5E07100C60894 /* KAppStoreFeedBackView.swift */,
 				42514CDB20F57AED00C60894 /* KAppStoreFeedbackConstants.swift */,
-				42A6ED8020F5E6E90093C2BE /* rateViewController.xib */,
-				42514CDF20F5BCCA00C60894 /* images.xcassets */,
+				4208B97920F7195300636CCB /* KAppStoreFeedbackRateViewController.xib */,
+				42514CDF20F5BCCA00C60894 /* KAppStoreFeedbackImages.xcassets */,
+				420B80752107B7A700F031EF /* KAppStoreFeedbackNavigationConfig.swift */,
+				420B80772107B7C900F031EF /* KAppStoreFeedbackConfig.swift */,
+				420B80792107B81B00F031EF /* KAppStoreFeedbackUIElementsConfig.swift */,
 			);
 			path = KAppStoreFeedback;
 			sourceTree = "<group>";
@@ -140,8 +149,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A6ED8120F5E6E90093C2BE /* rateViewController.xib in Resources */,
-				42514CE020F5BCCA00C60894 /* images.xcassets in Resources */,
+				42514CE020F5BCCA00C60894 /* KAppStoreFeedbackImages.xcassets in Resources */,
+				4208B97A20F7195300636CCB /* KAppStoreFeedbackRateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +165,9 @@
 				42514CD820F57A7000C60894 /* KAppStoreFeedbackRateViewController.swift in Sources */,
 				42514CDC20F57AED00C60894 /* KAppStoreFeedbackConstants.swift in Sources */,
 				42514D0020F5E07100C60894 /* KAppStoreFeedBackView.swift in Sources */,
+				420B80782107B7C900F031EF /* KAppStoreFeedbackConfig.swift in Sources */,
+				420B807A2107B81B00F031EF /* KAppStoreFeedbackUIElementsConfig.swift in Sources */,
+				420B80762107B7A700F031EF /* KAppStoreFeedbackNavigationConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
