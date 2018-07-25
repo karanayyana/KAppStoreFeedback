@@ -44,6 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeKappStoreFeedback()
     }
     
     //MARK:- Private Methods
@@ -106,18 +107,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func prepareKAppStoreFeedbackNavigationConfig() ->  KAppStoreFeedbackNavigationConfig {
-        let appStoreLink = appStoreLinkTextField.text ?? "https://itunes.apple.com/us"
+        let appStoreLink = appStoreLinkTextField.text
         let helpCenterLink = helpCenterLinkTextField.text
         let helpEmailLink = helpEmailTextField.text
-        return KAppStoreFeedbackNavigationConfig(iTunesLink: appStoreLink == "" ? "https://itunes.apple.com/us" : appStoreLink  , helpEmail: helpEmailLink, helpLink: helpCenterLink, callBackdelegate: nil)
-        
-        
+        return KAppStoreFeedbackNavigationConfig(iTunesLink:  appStoreLink  , helpEmail: helpEmailLink, helpLink: helpCenterLink, callBackdelegate: nil)
     }
     
-    //MARK:- IBActions
+    private func initializeKappStoreFeedback() {
+        KAppStoreFeedBackView.shared.initializeKAppStoreFeedBackView(hostingViewController: self, navigationConfig: prepareKAppStoreFeedbackNavigationConfig(), config: prepareKAppStoreFeedbackConfig(), configUIElements: prepareKAppStoreFeedbackUIElementsConfig())
+    }
+    
+    //MARK:- IBActionss
     
     @IBAction func showAlertClicked(_ sender : UIButton) {
-        KAppStoreFeedBackView.displayRateViewControllerTo(hostingViewController: self, navigationConfig:prepareKAppStoreFeedbackNavigationConfig() , config: prepareKAppStoreFeedbackConfig(), configUIElements: prepareKAppStoreFeedbackUIElementsConfig())
+        initializeKappStoreFeedback()
+        KAppStoreFeedBackView.shared.displayRateViewControllerOn(hostingViewController: self)
     }
     
     @IBAction func modifyAlertClicked(_ sender : UIButton) {

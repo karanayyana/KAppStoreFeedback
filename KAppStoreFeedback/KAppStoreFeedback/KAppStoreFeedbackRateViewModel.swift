@@ -41,14 +41,13 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
     func configureWith(
                     hostingViewController : UIViewController,
                    kAppStoreFeedbackNavigationConfig :KAppStoreFeedbackNavigationConfig,
-                    kAppStoreFeedbackConfig : KAppStoreFeedbackConfig?,
+                    kAppStoreFeedbackConfig : KAppStoreFeedbackConfig,
                     kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig? ){
         
         self.hostingViewController =  hostingViewController
         self.kAppStoreFeedbackNavigationConfig = kAppStoreFeedbackNavigationConfig
-        if let kAppStoreFeedbackConfig = kAppStoreFeedbackConfig {
-            self.kAppStoreFeedbackConfig = kAppStoreFeedbackConfig
-        }
+        self.kAppStoreFeedbackConfig = kAppStoreFeedbackConfig
+        
         if let kAppStoreFeedbackUIElementsConfig = kAppStoreFeedbackUIElementsConfig {
             self.kAppStoreFeedbackUIElementsConfig = kAppStoreFeedbackUIElementsConfig
         }

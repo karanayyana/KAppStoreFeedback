@@ -15,8 +15,12 @@ public struct KAppStoreFeedbackNavigationConfig {
     public var helpEmail : String? // if helplink doesnot exist then helpEmail is used.
     public var iTunesLink: String
     
-    public init (iTunesLink : String, helpEmail : String?,helpLink : String?, callBackdelegate : KAppStoreFeedbackProtocol? ) {
-        self.iTunesLink = iTunesLink
+    public init (iTunesLink : String?, helpEmail : String?,helpLink : String?, callBackdelegate : KAppStoreFeedbackProtocol? ) {
+        
+        self.iTunesLink = "https://www.apple.com/ios/app-store/"
+        if let iTunesLink = iTunesLink, iTunesLink != "" {
+            self.iTunesLink = iTunesLink
+        }
         self.callBackdelegate = callBackdelegate
         self.helpLink = helpLink
         self.helpEmail = helpEmail

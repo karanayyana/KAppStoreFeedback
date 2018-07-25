@@ -11,7 +11,7 @@ import UIKit
 public struct KAppStoreFeedbackUIElementsConfig {
     
     public var alertBackgroundColor: UIColor = UIColor.init(red: 247.0, green: 247.0, blue: 247.0, alpha: 1.0)
-    public var alertBorderColor: UIColor   = UIColor.lightGray
+    public var alertBorderColor: UIColor   = UIColor.init(red: 228.0/255, green: 231.0/255, blue: 235.0/255, alpha: 1.0)
     public var alertTitleBackgroundColor: UIColor  = UIColor.init(red: 247.0, green: 247.0, blue: 247.0, alpha: 1.0)
     public var alertTitleFontColor: UIColor = UIColor.darkText
     public var alertCornerRadius: Float = 10.0

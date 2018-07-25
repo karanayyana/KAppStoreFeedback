@@ -69,7 +69,7 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
     func configureWith(
                 hostingViewController : UIViewController,
                 kAppStoreFeedbackNavigationConfig :KAppStoreFeedbackNavigationConfig,
-                kAppStoreFeedbackConfig : KAppStoreFeedbackConfig?,
+                kAppStoreFeedbackConfig : KAppStoreFeedbackConfig,
                 kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig? ) {
         viewModel.configureWith(
             hostingViewController: hostingViewController, kAppStoreFeedbackNavigationConfig: kAppStoreFeedbackNavigationConfig,

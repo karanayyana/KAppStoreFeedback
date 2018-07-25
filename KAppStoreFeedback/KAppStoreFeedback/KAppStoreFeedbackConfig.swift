@@ -18,7 +18,7 @@ public struct KAppStoreFeedbackConfig {
     public var helpButtonTitle: String
     public var minimumLoginAttempt : Int
     
-    public init(kASFFeedbackType: KAppStoreFeedbackType = KAppStoreFeedbackType.thumbsView,
+    public init(kASFFeedbackType: KAppStoreFeedbackType = KAppStoreFeedbackType.emoticonsView,
                 title: String? ,
                 message: String?,
                 notNowButtonTitle: String?,
@@ -35,7 +35,7 @@ public struct KAppStoreFeedbackConfig {
         self.minimumLoginAttempt = minimumLoginAttempt ?? 5
     }
     
-    public init (kASFFeedbackType: KAppStoreFeedbackType = KAppStoreFeedbackType.thumbsView,
+    public init (kASFFeedbackType: KAppStoreFeedbackType = KAppStoreFeedbackType.emoticonsView,
                  minimumLoginAttempt : Int = 5) {
         self.kASFFeedbackType = kASFFeedbackType
         self.title = "Tell us what you think"
