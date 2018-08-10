@@ -1,7 +1,11 @@
 # KAppStoreFeedback
 Simple way to collect user feedback and navigate to AppStore if positive review else to help center/support email.
 
-![](./Feedback.gif)
+## DEMO
+<p align="center">
+<img src ="https://raw.githubusercontent.com/karanayyana/KAppStoreFeedback/master/Feedback.gif", width=200, height=350, align="center"/>
+</p>
+
 
 ## Feature
 - Send feedback by mail
