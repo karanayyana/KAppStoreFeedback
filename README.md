@@ -3,7 +3,7 @@ Simple way to collect user feedback and navigate to AppStore if positive review 
 
 ## DEMO
 <p align="center">
-<img src ="https://raw.githubusercontent.com/karanayyana/KAppStoreFeedback/master/Feedback.gif", width=200, height=350, align="center"/>
+<img src ="https://raw.githubusercontent.com/karanayyana/KAppStoreFeedback/master/Feedback.gif", align="center"/>
 </p>
 
 
