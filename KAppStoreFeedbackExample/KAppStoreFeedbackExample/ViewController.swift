@@ -46,7 +46,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         initializeKappStoreFeedback()
     }
-    
     //MARK:- Private Methods
     private func prepareKAppStoreFeedbackConfig() -> KAppStoreFeedbackConfig {
         let title = titleTextField.text == "" ? nil : titleTextField.text
@@ -104,8 +103,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                           alertSecondryButtonFont: alertSecondryButtonFont,
                                           alertPrimaryButtonFont: alertPrimaryButtonFont)
         
+        
+        
     }
-    
+
     private func prepareKAppStoreFeedbackNavigationConfig() ->  KAppStoreFeedbackNavigationConfig {
         let appStoreLink = appStoreLinkTextField.text
         let helpCenterLink = helpCenterLinkTextField.text
@@ -116,6 +117,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private func initializeKappStoreFeedback() {
         KAppStoreFeedBackView.shared.initializeKAppStoreFeedBackView(hostingViewController: self, navigationConfig: prepareKAppStoreFeedbackNavigationConfig(), config: prepareKAppStoreFeedbackConfig(), configUIElements: prepareKAppStoreFeedbackUIElementsConfig())
     }
+    
+   
     
     //MARK:- IBActionss
     

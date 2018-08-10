@@ -74,10 +74,10 @@ public struct KAppStoreFeedbackUIElementsConfig {
             self.alertMessageFont = alertMessageFont
         }
         if let alertSecondryButtonFont = alertSecondryButtonFont {
-            self.alertPrimaryButtonFont = alertSecondryButtonFont
+            self.alertSecondryButtonFont = alertSecondryButtonFont
         }
         if let alertPrimaryButtonFont = alertPrimaryButtonFont {
-            self.alertSecondryButtonFont = alertPrimaryButtonFont
+            self.alertPrimaryButtonFont = alertPrimaryButtonFont
         }
     }
 }

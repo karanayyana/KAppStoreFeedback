@@ -9,16 +9,16 @@
 Pod::Spec.new do |s|
 
   s.name         = "KAppStoreFeedback"
-  s.version      = "1.0.8"
+  s.version      = "1.0.9"
   s.summary      = "Simple way to ensure possitive feedback in AppStore"
   s.description  = "Simple (3 type) modal to collect user feedback upon subsequent visit to App. Navigate to AppStore review if positive user experience, in case of negative navigate to help center/email to support."
   s.homepage     = "https://github.com/karanayyana/KAppStoreFeedback"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
+  s.screenshots  = "https://github.com/karanayyana/KAppStoreFeedback/blob/master/Feedback.gif"
   s.license      = "MIT"
   s.author             = { "Prajwal Karanayyana Vasantha" => "prajwal.kv1@gmail.com" }
   s.platform     = :ios, "11.0"
 
-  s.source       = { :git => "https://github.com/karanayyana/KAppStoreFeedback.git", :tag => "1.0.8" }
+  s.source       = { :git => "https://github.com/karanayyana/KAppStoreFeedback.git", :tag => "1.0.9" }
 
   s.source_files  = "KAppStoreFeedback/**/*.{h,swift,xib}"
 
