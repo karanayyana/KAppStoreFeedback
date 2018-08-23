@@ -29,7 +29,7 @@ public struct KAppStoreFeedbackConfig {
         self.kASFFeedbackType = kASFFeedbackType
         self.title = title ?? "Tell us what you think"
         self.message = message ?? ("If you enjoy using " + (Bundle.main.infoDictionary!["CFBundleName"] as! String) + ", would you mind taking a moment to rate it?")
-        self.notNowButtonTitle = notNowButtonTitle ?? "Not Now"
+        self.notNowButtonTitle = notNowButtonTitle ?? "Not now"
         self.rateButtonTitle = rateButtonTitle ?? "Rate us on App Store?"
         self.helpButtonTitle = helpButtonTitle ?? "How can we improve?"
         self.minimumLoginAttempt = minimumLoginAttempt ?? 5
@@ -40,7 +40,7 @@ public struct KAppStoreFeedbackConfig {
         self.kASFFeedbackType = kASFFeedbackType
         self.title = "Tell us what you think"
         self.message = ("If you enjoy using " + (Bundle.main.infoDictionary!["CFBundleName"] as! String) + ", would you mind taking a moment to rate it?")
-        self.notNowButtonTitle = "Not Now"
+        self.notNowButtonTitle = "Not now"
         self.rateButtonTitle = "Rate us on App Store?"
         self.helpButtonTitle = "How can we improve?"
         self.minimumLoginAttempt = minimumLoginAttempt

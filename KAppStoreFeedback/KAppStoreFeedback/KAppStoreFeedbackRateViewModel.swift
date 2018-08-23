@@ -31,8 +31,8 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
     
     private var minimumLoginAttempt : Int = 15
 
-    var isRatingPositive : Bool = true
-    
+    var isRatingPositive : Bool? = nil
+    var displayDontAskMe : Bool = true
     //MARK:- Initialize
     init( delegate : KAppStoreFeedbackRateViewModelDelegate?) {
         viewModelDelegate = delegate
@@ -42,8 +42,9 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
                     hostingViewController : UIViewController,
                    kAppStoreFeedbackNavigationConfig :KAppStoreFeedbackNavigationConfig,
                     kAppStoreFeedbackConfig : KAppStoreFeedbackConfig,
-                    kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig? ){
-        
+                    kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig?,
+                    displayDontAskMe : Bool){
+        self.displayDontAskMe = displayDontAskMe
         self.hostingViewController =  hostingViewController
         self.kAppStoreFeedbackNavigationConfig = kAppStoreFeedbackNavigationConfig
         self.kAppStoreFeedbackConfig = kAppStoreFeedbackConfig
@@ -51,32 +52,35 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
         if let kAppStoreFeedbackUIElementsConfig = kAppStoreFeedbackUIElementsConfig {
             self.kAppStoreFeedbackUIElementsConfig = kAppStoreFeedbackUIElementsConfig
         }
+
     }
     
     //MARK:- Helper methods
  
     func getRateButtonTitle() -> String {
-        return isRatingPositive ? kAppStoreFeedbackConfig.rateButtonTitle : kAppStoreFeedbackConfig.helpButtonTitle
+        return isRatingPositive ?? false ? kAppStoreFeedbackConfig.rateButtonTitle : kAppStoreFeedbackConfig.helpButtonTitle
     }
     
     func getRateButtonFontColor() -> UIColor {
-        return isRatingPositive ? kAppStoreFeedbackUIElementsConfig.alertRateButtonFontColor : kAppStoreFeedbackUIElementsConfig.alertHelpButtonFontColor
+        return isRatingPositive ?? false ? kAppStoreFeedbackUIElementsConfig.alertRateButtonFontColor : kAppStoreFeedbackUIElementsConfig.alertHelpButtonFontColor
     }
 
     
     func userSelectedRating(rating : Int) {
-        switch kAppStoreFeedbackConfig.kASFFeedbackType {
-        case .emoticonsView:
-            isRatingPositive = rating >= 3 ? true : false
-            break
-        case .ratingsView:
-            isRatingPositive = rating >= 4 ? true : false
-            break
-        case .thumbsView:
-            isRatingPositive = rating == 2 ? true : false
-            break
+        if isRatingPositive == nil {
+            switch kAppStoreFeedbackConfig.kASFFeedbackType {
+            case .emoticonsView:
+                isRatingPositive = rating >= 3 ? true : false
+                break
+            case .ratingsView:
+                isRatingPositive = rating >= 4 ? true : false
+                break
+            case .thumbsView:
+                isRatingPositive = rating == 2 ? true : false
+                break
+            }
+            viewModelDelegate?.updateViewButtons()
         }
-        viewModelDelegate?.updateViewButtons()
     }
 
     func getPossitiveFeedBackURL() -> String {
@@ -92,12 +96,24 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
     }
     
     func handlePossitiveFeedBackInteraction() {
+        KAppStoreFeedbackUtility.dontAskMeAgain()
+        if let delegate =  kAppStoreFeedbackNavigationConfig?.callBackdelegate {
+            delegate.navigateToPossitiveFeedBackHandler()
+            viewModelDelegate?.dismissViewController()
+            return
+        }
         if let url = URL(string: getPossitiveFeedBackURL()) {
            navigateToURL(url: url)
         }
     }
     
     func handleNegetiveFeedBackInteraction() {
+        KAppStoreFeedbackUtility.dontAskMeAgain()
+        if let delegate =  kAppStoreFeedbackNavigationConfig?.callBackdelegate {
+            delegate.navigateToNegativeFeedBackHandler()
+            viewModelDelegate?.dismissViewController()
+            return
+        }
         if let urlString = getNegetiveFeedBackURL(), let url = URL(string:urlString) {
             navigateToURL(url: url)
         }else if let email = getNegetiveFeedBackEmail() {
@@ -106,6 +122,10 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
             // No negetive links available so take them to possitive review
             handlePossitiveFeedBackInteraction()
         }
+    }
+    
+    func dontAskMeAgainClicked() {
+        KAppStoreFeedbackUtility.dontAskMeAgain()
     }
     
     func navigateToURL(url : URL) {

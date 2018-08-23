@@ -24,6 +24,9 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var notNowButton: UIButton!
+    @IBOutlet weak var dontAskMeAgain: UIButton!
+    @IBOutlet weak var dontAskMeAgainDivider: UIView!
+    @IBOutlet weak var alertHeightConstraint: NSLayoutConstraint!
     
     //Ratings
     @IBOutlet weak var star1Button: UIButton!
@@ -70,11 +73,13 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
                 hostingViewController : UIViewController,
                 kAppStoreFeedbackNavigationConfig :KAppStoreFeedbackNavigationConfig,
                 kAppStoreFeedbackConfig : KAppStoreFeedbackConfig,
-                kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig? ) {
+                kAppStoreFeedbackUIElementsConfig : KAppStoreFeedbackUIElementsConfig?,
+                displayDontAskMe : Bool) {
         viewModel.configureWith(
             hostingViewController: hostingViewController, kAppStoreFeedbackNavigationConfig: kAppStoreFeedbackNavigationConfig,
                         kAppStoreFeedbackConfig: kAppStoreFeedbackConfig,
-                        kAppStoreFeedbackUIElementsConfig: kAppStoreFeedbackUIElementsConfig)
+                        kAppStoreFeedbackUIElementsConfig: kAppStoreFeedbackUIElementsConfig,
+                        displayDontAskMe: displayDontAskMe)
     }
     
     //MARK:- Private Methods
@@ -98,6 +103,7 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
         titleLabel.text = viewModel.kAppStoreFeedbackConfig.title
         notNowButton.setTitle(viewModel.kAppStoreFeedbackConfig.notNowButtonTitle, for: .normal)
         
+        
         //kAppStoreFeedbackUIElementsConfig
         feedbackView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertBorderColor
         buttonTopSeperaterView.backgroundColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertBorderColor
@@ -107,18 +113,23 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
         titleLabel.textColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertTitleFontColor
         message.textColor = viewModel.kAppStoreFeedbackUIElementsConfig.alertMessageFontColor
         notNowButton.setTitleColor(viewModel.kAppStoreFeedbackUIElementsConfig.alertNotNowButtonFontColor, for: .normal)
+        dontAskMeAgain.setTitleColor(viewModel.kAppStoreFeedbackUIElementsConfig.alertNotNowButtonFontColor, for: .normal)
 
         titleLabel.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertTitleFont
         message.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertMessageFont
         rateButton.titleLabel?.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertPrimaryButtonFont
         notNowButton.titleLabel?.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertSecondryButtonFont
+        dontAskMeAgain.titleLabel?.font = viewModel.kAppStoreFeedbackUIElementsConfig.alertSecondryButtonFont
         
         feedbackView.layer.cornerRadius = CGFloat(viewModel.kAppStoreFeedbackUIElementsConfig.alertCornerRadius)
         feedbackBackgroundView.layer.cornerRadius = CGFloat(viewModel.kAppStoreFeedbackUIElementsConfig.alertCornerRadius)
         feedbackView.layer.masksToBounds = true
         feedbackBackgroundView.layer.masksToBounds = true
         
-        
+
+        dontAskMeAgain.isHidden = !viewModel.displayDontAskMe
+        dontAskMeAgainDivider.isHidden = !viewModel.displayDontAskMe
+        alertHeightConstraint.constant = viewModel.displayDontAskMe ? 230 : 190
         
     }
     
@@ -254,8 +265,19 @@ class KAppStoreFeedbackRateViewController: UIViewController , KAppStoreFeedbackR
         
     }
     
+    @IBAction func dontAskMeAgainClicked(_ sender : UIButton) {
+        viewModel.dontAskMeAgainClicked()
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.view.backgroundColor = UIColor.clear
+            self?.feedbackView.alpha = 0
+        }) { [weak self] (_) in
+            self?.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
     @IBAction func primaryButtonClicked(_ sender : UIButton) {
-        if self.viewModel.isRatingPositive {
+        if self.viewModel.isRatingPositive ?? false {
             self.viewModel.handlePossitiveFeedBackInteraction()
         }else {
             self.viewModel.handleNegetiveFeedBackInteraction()

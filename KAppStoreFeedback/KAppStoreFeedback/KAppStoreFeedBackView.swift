@@ -41,7 +41,7 @@ public class KAppStoreFeedBackView {
     */
     
     public func displayRateViewControllerOn(hostingViewController : UIViewController) {
-        KAppStoreFeedbackUtility.displayAlert(hostingViewController: hostingViewController, navigationConfig: navigationConfig, config: config, configUIElements: configUIElements)
+        KAppStoreFeedbackUtility.displayAlert(hostingViewController: hostingViewController, navigationConfig: navigationConfig, config: config, configUIElements: configUIElements, displayDontAskMe: false)
     }
     
     /*
@@ -50,9 +50,7 @@ public class KAppStoreFeedBackView {
      */
     
     public func resetKAppStoreFeedBackView() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey:"KAppStoreFeedBackView_appLaunchCount")
-        userDefaults.synchronize()
+        KAppStoreFeedbackUtility.resetkAppStoreFeedback()
     }
     
     

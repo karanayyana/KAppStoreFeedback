@@ -14,7 +14,7 @@ Simple way to collect user feedback and navigate to AppStore if positive review 
 - Three modes of feedback with customizable UI
 
 ## Requirements
-- iOS11.0+
+- iOS 9.0+
 - Xcode 9+
 
 ## Installation
