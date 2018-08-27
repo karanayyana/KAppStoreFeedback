@@ -19,10 +19,17 @@ public struct KAppStoreFeedbackUIElementsConfig {
     public var alertNotNowButtonFontColor: UIColor = UIColor.red
     public var alertRateButtonFontColor: UIColor = UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1)
     public var alertHelpButtonFontColor: UIColor = UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1)
+     #if swift(>=3.4)
     public var alertTitleFont : UIFont  = UIFont.systemFont(ofSize: 18, weight: .semibold)
     public var alertMessageFont : UIFont = UIFont.systemFont(ofSize: 14, weight: .regular)
     public var alertSecondryButtonFont : UIFont = UIFont.systemFont(ofSize: 15, weight: .medium)
     public var alertPrimaryButtonFont : UIFont =  UIFont.systemFont(ofSize: 15, weight: .medium)
+    #else
+    public var alertTitleFont : UIFont  = UIFont.systemFont(ofSize: 18, weight: UIFontWeightSemibold)
+    public var alertMessageFont : UIFont = UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)
+    public var alertSecondryButtonFont : UIFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+    public var alertPrimaryButtonFont : UIFont =  UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+    #endif
     
     public init() { }
     

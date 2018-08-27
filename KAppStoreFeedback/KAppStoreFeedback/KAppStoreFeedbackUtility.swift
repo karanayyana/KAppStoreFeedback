@@ -30,12 +30,13 @@ class KAppStoreFeedbackUtility {
         if let minimumAtempt = config?.minimumLoginAttempt   {
             var userDefault = UserDefaults.standard
             var appLaunchCount = userDefault.integer(forKey: "KAppStoreFeedBackView_appLaunchCount")
+            appLaunchCount = appLaunchCount + 1
             let isDontAskMeAgainTrue = userDefault.bool(forKey: "KAppStoreFeedBackView_DontAskMeAgain")
-            if (appLaunchCount >= minimumAtempt && !isDontAskMeAgainTrue) {
+            if (appLaunchCount % minimumAtempt == 0 && !isDontAskMeAgainTrue) {
                 displayAlert(hostingViewController: hostingViewController, navigationConfig: navigationConfig, config: config, configUIElements: configUIElements, displayDontAskMe: true)
-            }else {
+            }
+            if !isDontAskMeAgainTrue {
                 DispatchQueue.main.async {
-                    appLaunchCount = appLaunchCount + 1
                     userDefault = UserDefaults.standard
                     userDefault.set(appLaunchCount , forKey: "KAppStoreFeedBackView_appLaunchCount")
                     userDefault.synchronize()
