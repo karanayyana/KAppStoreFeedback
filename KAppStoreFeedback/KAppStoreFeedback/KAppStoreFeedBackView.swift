@@ -45,6 +45,16 @@ public class KAppStoreFeedBackView {
     }
     
     /*
+     call this method to invoke rate alert irrespective of minimum app count reach
+     ensure that KAppStoreFeedBackView is initialized before making this call
+     this method will not work if user has tapped dontAskMeAgain
+     */
+    
+    public func forceRateViewController(hostingViewController : UIViewController) {
+        KAppStoreFeedbackUtility.forceRateViewController(hostingViewController: hostingViewController, navigationConfig: navigationConfig, config: config, configUIElements: configUIElements, displayDontAskMe: true)
+    }
+    
+    /*
      call this method to reset the counter of app launches
      default is 5
      */

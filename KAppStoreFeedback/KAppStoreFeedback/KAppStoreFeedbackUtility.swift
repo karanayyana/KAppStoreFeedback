@@ -63,6 +63,26 @@ class KAppStoreFeedbackUtility {
         }
     }
     
+    class func forceRateViewController(hostingViewController : UIViewController,
+                            navigationConfig : KAppStoreFeedbackNavigationConfig?,
+                            config : KAppStoreFeedbackConfig?,
+                            configUIElements : KAppStoreFeedbackUIElementsConfig?,
+                            displayDontAskMe : Bool) {
+        let frameworkBundle = Bundle(for: KAppStoreFeedbackRateViewController.self)
+        let rateVC = KAppStoreFeedbackRateViewController(nibName: "KAppStoreFeedbackRateViewController", bundle: frameworkBundle )
+        if let navigationConfig = navigationConfig, let config = config {
+            let userDefault = UserDefaults.standard
+            let isDontAskMeAgainTrue = userDefault.bool(forKey: "KAppStoreFeedBackView_DontAskMeAgain")
+            if !isDontAskMeAgainTrue {
+                rateVC.configureWith(hostingViewController: hostingViewController, kAppStoreFeedbackNavigationConfig: navigationConfig, kAppStoreFeedbackConfig: config, kAppStoreFeedbackUIElementsConfig: configUIElements, displayDontAskMe: displayDontAskMe)
+                rateVC.modalPresentationStyle = .overCurrentContext
+                hostingViewController.present(rateVC, animated: true, completion: nil)
+            }
+        }else {
+            print("KAppStoreFeedBackView not initialized, Please call initializeKAppStoreFeedBackView")
+        }
+    }
+    
     class func dontAskMeAgain() {
         var userDefault = UserDefaults.standard
         userDefault = UserDefaults.standard
