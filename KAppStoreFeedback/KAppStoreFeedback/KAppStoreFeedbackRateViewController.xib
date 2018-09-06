@@ -245,10 +245,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0T-fP-ujX" userLabel="buttonView">
-                                    <rect key="frame" x="0.0" y="140" width="248" height="88"/>
+                                    <rect key="frame" x="0.0" y="108" width="248" height="120"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eCg-dZ-wZV">
-                                            <rect key="frame" x="0.0" y="-20" width="248" height="108"/>
+                                            <rect key="frame" x="0.0" y="12" width="248" height="108"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quS-9n-ZDH">
                                                     <rect key="frame" x="0.0" y="0.0" width="248" height="1"/>
@@ -317,7 +317,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="eCg-dZ-wZV" firstAttribute="leading" secondItem="L0T-fP-ujX" secondAttribute="leading" id="7PT-rF-WPE"/>
-                                        <constraint firstAttribute="height" constant="88" id="TVl-ns-yNr"/>
+                                        <constraint firstAttribute="height" constant="120" id="TVl-ns-yNr"/>
                                         <constraint firstAttribute="trailing" secondItem="eCg-dZ-wZV" secondAttribute="trailing" id="pEQ-AP-wZF"/>
                                         <constraint firstAttribute="bottom" secondItem="eCg-dZ-wZV" secondAttribute="bottom" id="tsc-PY-gWT"/>
                                     </constraints>
@@ -361,13 +361,23 @@
                     </constraints>
                 </view>
             </subviews>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="pzi-OV-5UU" firstAttribute="centerX" secondItem="6gf-7D-IDd" secondAttribute="centerX" id="1Rk-cP-Ig8"/>
                 <constraint firstItem="pzi-OV-5UU" firstAttribute="centerY" secondItem="6gf-7D-IDd" secondAttribute="centerY" id="JbS-gp-cUG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="aSe-KJ-eix"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="oyY-Zs-4Pn" appends="YES" id="svD-4R-OkL"/>
+            </connections>
             <point key="canvasLocation" x="406" y="120"/>
         </view>
+        <tapGestureRecognizer id="oyY-Zs-4Pn">
+            <connections>
+                <action selector="notNowClicked:" destination="-1" id="tx7-8b-q9u"/>
+                <outlet property="delegate" destination="-1" id="SgI-kW-dSr"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="angry-unselected" width="256" height="256"/>
