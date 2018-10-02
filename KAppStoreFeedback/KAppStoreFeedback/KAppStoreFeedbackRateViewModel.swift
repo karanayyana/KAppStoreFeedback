@@ -67,7 +67,6 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
 
     
     func userSelectedRating(rating : Int) {
-        if isRatingPositive == nil {
             switch kAppStoreFeedbackConfig.kASFFeedbackType {
             case .emoticonsView:
                 isRatingPositive = rating >= 3 ? true : false
@@ -80,7 +79,6 @@ class KAppStoreFeedbackRateViewModel: NSObject, MFMailComposeViewControllerDeleg
                 break
             }
             viewModelDelegate?.updateViewButtons()
-        }
     }
 
     func getPossitiveFeedBackURL() -> String {
